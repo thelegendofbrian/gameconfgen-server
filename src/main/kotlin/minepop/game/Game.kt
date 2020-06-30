@@ -10,37 +10,29 @@ enum class GameId(val gameName: String) {
 }
 
 interface Game {
-    var configList: Game.ConfigList
+    var configList: MutableList<Config>
 
     /**
         Parses game-specific config and returns config object
      */
-    fun parseConfig(file: File): ConfigList
+    fun parseConfig(file: File): MutableList<Config>
 
     /**
         Uses a list of config properties to generate a game-specific config
      */
-    fun genConfig(options: List<String>): ConfigList
+    fun genConfig(options: List<String>): MutableList<Config>
 
-    class ConfigList(val game: GameId) {
-        var configList = mutableListOf<Config>()
-
-        fun add(config: Config) {
-            configList.add(config)
-        }
-
-        fun print() {
-            configList.forEach {config ->
-                println("Name: " + config.name + "/" + config.prettyName)
-                config.configOptions.forEach { configOption ->
-                    println("  ${configOption.name} ${configOption.order} ${configOption.isDefault}")
-                }
+    fun print() {
+        configList.forEach {config ->
+            println("Name: " + config.name + "/" + config.prettyName)
+            config.configOptions.forEach { configOption ->
+                println("  ${configOption.name} ${configOption.order} ${configOption.isDefault}")
             }
         }
     }
 }
 
-class Config(val name: String, var prettyName: String = name.capitalize()) {
+class Config(val name: String, var prettyName: String = name.toLowerCase().capitalize()) {
     var configOptions = mutableListOf<ConfigOption>()
 
     fun addConfigOption(configOption: ConfigOption) {
@@ -58,4 +50,4 @@ class Config(val name: String, var prettyName: String = name.capitalize()) {
     }
 }
 
-data class ConfigOption(val name: String, val order: Int, val isDefault: Boolean = false)
+data class ConfigOption(val name: String, val order: Int, val isDefault: Boolean = false, val displayName: String = name.toLowerCase().capitalize())

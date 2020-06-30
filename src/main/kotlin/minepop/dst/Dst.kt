@@ -11,20 +11,20 @@ const val optionsPattern = "\"([^\"]*)\""
 
 fun main(args: Array<String>) {
     var dst: Dst = Dst()
-    dst.parseConfig(File("worldgenoverride.lua")).print()
+    dst.parseConfig(File("worldgenoverride.lua"))
+    dst.print()
 }
 
 class Dst: Game {
-    override var configList = Game.ConfigList(GameId.DST)
+    override var configList = mutableListOf<Config>()
 
-    override fun parseConfig(file: File): Game.ConfigList {
+    override fun parseConfig(file: File): MutableList<Config> {
         var dstConf = file.readLines()
         dstConf.forEach {
             val match = Regex(pattern).find(it)
             if (match != null) {
                 val (configName, configValue, configOptions) = match.destructured
                 var config: Config = Config(configName)
-//                println(configName + " " + configValue)
 
                 val optionMatch = Regex(optionsPattern).findAll(configOptions)
                 optionMatch?.forEachIndexed {order, optionString ->
@@ -36,14 +36,10 @@ class Dst: Game {
             configList.add(config)
             }
         }
-
-//        configList.add(Config("sample_config"))
-//        configList.add(Config("sample_config2"))
-
         return configList
     }
 
-    override fun genConfig(options: List<String>): Game.ConfigList {
+    override fun genConfig(options: List<String>): MutableList<Config> {
         TODO("Not yet implemented")
     }
 }

@@ -6,13 +6,11 @@ import java.io.File
 fun main(args: Array<String>) {
     val dao = DAO()
     var dst: Dst = Dst()
-    dst.parseConfig(File("worldgenoverride.lua")).configList.forEach {config ->
-        dao.insertConfig(1, config.name)
+    var lastConfigId: Int = -1
+    dst.parseConfig(File("worldgenoverride.lua")).forEach {config ->
+        lastConfigId = dao.insertConfig(1, config.name)
         config.configOptions.forEach { configOption ->
-            println(configOption.name)
-            println(configOption.order)
-            println(configOption.isDefault)
-            TODO("Create new function in DAO to insert config options into db")
+            dao.insertConfigOption(lastConfigId, configOption.name, configOption.displayName, configOption.order, configOption.isDefault)
         }
     }
 }
