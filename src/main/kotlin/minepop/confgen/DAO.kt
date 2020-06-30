@@ -4,10 +4,7 @@ import com.natpryce.konfig.ConfigurationProperties
 import com.natpryce.konfig.Key
 import com.natpryce.konfig.intType
 import com.natpryce.konfig.stringType
-import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
 
@@ -33,6 +30,12 @@ class DAO {
                 it[name] = name2
                 it[displayName] = name2.capitalize()
             }
+        }
+    }
+
+    fun selectConfigs() {
+        transaction {
+            Config.selectAll()
         }
     }
 
