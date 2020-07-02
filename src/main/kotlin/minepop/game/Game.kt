@@ -3,36 +3,22 @@ package minepop.game
 import java.io.File
 import java.lang.Exception
 
-enum class GameId(val gameName: String) {
-    MC("Minecraft"),
-    DST("Don't Starve Together"),
-    SDTD("Seven Days to Die")
-}
+class Game(val name: String, val configFiles: MutableList<ConfigFile> = mutableListOf())
 
-interface Game {
-    var configList: MutableList<Config>
+abstract class ConfigFile(val path: String, val filename: String, val configs: MutableList<Config> = mutableListOf()) {
+    /**
+     * Parses a game-specific config file and returns a list of Config's
+     */
+    abstract fun parseConfigFile(file: File): MutableList<Config>
 
     /**
-        Parses game-specific config and returns config object
+     * Uses a list of ConfigFile's to generate a list of game-specific config files
      */
-    fun parseConfig(file: File): MutableList<Config>
-
-    /**
-        Uses a list of config properties to generate a game-specific config
-     */
-    fun genConfig(options: List<String>): MutableList<Config>
-
-    fun print() {
-        configList.forEach {config ->
-            println("Name: " + config.name + "/" + config.prettyName)
-            config.configOptions.forEach { configOption ->
-                println("  ${configOption.name} ${configOption.order} ${configOption.isDefault}")
-            }
-        }
-    }
+    abstract fun genConfigFile(): String
 }
 
-class Config(val name: String, var prettyName: String = name.toLowerCase().capitalize()) {
+class Config(val name: String, var category: String = "General") {
+    var displayName: String = toDisplayName(name)
     var configOptions = mutableListOf<ConfigOption>()
 
     fun addConfigOption(configOption: ConfigOption) {
@@ -51,3 +37,5 @@ class Config(val name: String, var prettyName: String = name.toLowerCase().capit
 }
 
 data class ConfigOption(val name: String, val order: Int, val isDefault: Boolean = false, val displayName: String = name.toLowerCase().capitalize())
+
+fun toDisplayName(name: String) = name.toLowerCase().capitalize().replace("_"," ").replace("-"," ")

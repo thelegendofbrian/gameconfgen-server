@@ -1,45 +1,46 @@
 package minepop.dst
 
-import minepop.game.Config
-import minepop.game.ConfigOption
-import minepop.game.Game
-import minepop.game.GameId
+import minepop.game.*
 import java.io.File
 
 const val pattern = "^\\s*([^ ]*) = \"([^,]*)\",.*-- (\".*\").*"
 const val optionsPattern = "\"([^\"]*)\""
 
-fun main(args: Array<String>) {
-    var dst: Dst = Dst()
-    dst.parseConfig(File("worldgenoverride.lua"))
-    dst.print()
+object Games {
+    val dst = Game("Don't Starve Together")
 }
 
-class Dst: Game {
-    override var configList = mutableListOf<Config>()
+fun main(args: Array<String>) {
+    val configOption = ConfigOption("Option 1", 0)
+    val config = Config("test_config")
+    val configFile = DstConfigFile("ur/path/boi/", "config.txt")
+    configFile.configs.add(config)
+    Games.dst.configFiles.add(configFile)
+}
 
-    override fun parseConfig(file: File): MutableList<Config> {
+class DstConfigFile(path: String, filename: String, configs: MutableList<Config> = mutableListOf()): ConfigFile(path, filename, configs) {
+    override fun parseConfigFile(file: File): MutableList<Config> {
         var dstConf = file.readLines()
         dstConf.forEach {
             val match = Regex(pattern).find(it)
             if (match != null) {
                 val (configName, configValue, configOptions) = match.destructured
-                var config: Config = Config(configName)
+                var config = Config(configName)
 
                 val optionMatch = Regex(optionsPattern).findAll(configOptions)
                 optionMatch?.forEachIndexed {order, optionString ->
-                    val configOptionList = optionString.groupValues.subList(1, optionString.groupValues.size)
-                    configOptionList.forEach { option ->
+                    val configOptions = optionString.groupValues.subList(1, optionString.groupValues.size)
+                    configOptions.forEach { option ->
                         config.addConfigOption(ConfigOption(option, order, option == configValue))
                     }
                 }
-            configList.add(config)
+            configs.add(config)
             }
         }
-        return configList
+        return configs
     }
 
-    override fun genConfig(options: List<String>): MutableList<Config> {
+    override fun genConfigFile(): String {
         TODO("Not yet implemented")
     }
 }

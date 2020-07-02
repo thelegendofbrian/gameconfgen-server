@@ -4,7 +4,10 @@ import com.natpryce.konfig.ConfigurationProperties
 import com.natpryce.konfig.Key
 import com.natpryce.konfig.intType
 import com.natpryce.konfig.stringType
-import minepop.confgen.DAO.Config.nullable
+import minepop.dst.DstConfigFile
+import minepop.game.Config
+import minepop.game.ConfigFile
+import minepop.game.Game
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
@@ -24,63 +27,95 @@ class DAO {
             driver = "com.mysql.cj.jdbc.Driver", user = config[mySqlUser], password = config[mySqlPass])
     }
 
-    fun insertConfig(configFileId2: Int, name2: String): Int {
+    /**
+     * Insert config object into database
+     */
+    fun insertConfig(config: Config): Int {
         var lastConfigId: Int = -1
         transaction {
-            lastConfigId = Config.insert {
-                it[configFileId] = configFileId2
-                it[name] = name2
-                it[displayName] = name2.capitalize()
-            }[Config.id]
+            lastConfigId = ConfigTable.insert {
+                it[configFileId] = 1
+                it[name] = config.name
+                it[displayName] = config.displayName
+            }[ConfigTable.id]
         }
         return lastConfigId
     }
 
-    fun selectConfigs() {
+    /**
+     * Generate a Game object for a specified game from the database
+     */
+    fun buildConfigs(gameId2: Int): Game {
+        val configs = mutableListOf<Config>()
         transaction {
-            Config.selectAll()
+            (ConfigFileTable innerJoin ConfigTable innerJoin ConfigCategoryTable).slice(ConfigTable.categoryId, ConfigCategoryTable.name).select {
+                ConfigFileTable.gameId.eq(gameId2)
+            }.groupBy(ConfigTable.categoryId, ConfigCategoryTable.name).forEach { category ->
+                var configFile = DstConfigFile(category[ConfigFileTable.path], category[ConfigFileTable.filename])
+                configs += Config("name")
+            }
         }
+        return TODO()
+    }
+
+    fun selectConfigs(categoryId: Int) {
+
     }
 
     fun insertConfigOption(configId2: Int, name2: String, displayName2: String, order2: Int, isDefault2: Boolean) {
         var lastConfigOptionId: Int = -1
 
         transaction {
-            lastConfigOptionId = ConfigOption.insert {
+            lastConfigOptionId = ConfigOptionTable.insert {
                 it[option] = name2
                 it[displayName] = displayName2
                 it[order] = order2
                 it[configId] = configId2
-            }[ConfigOption.id]
-        }
-        transaction {
+            }[ConfigOptionTable.id]
+
             if (isDefault2) {
-                Config.update({ Config.id eq configId2}) {
+                ConfigTable.update({ ConfigTable.id eq configId2}) {
                     it[defaultConfigOptionId] = lastConfigOptionId
                 }
             }
         }
     }
 
-    object Config: Table("config") {
+    object ConfigTable: Table("config") {
         val id = integer("id").autoIncrement()
-        val configFileId = integer("config_file_id")
+        val configFileId = integer("config_file_id") references ConfigFileTable.id
         val name = varchar("name", 45)
         val defaultConfigOptionId = integer("default_config_option_id").nullable()
         val displayName = varchar("display_name", 45)
         val description = varchar("description", 45).nullable()
-        val categoryId = integer("category_id").nullable()
+        val categoryId = (integer("category_id") references ConfigCategoryTable.id).nullable()
 
         override val primaryKey = PrimaryKey(id)
     }
 
-    object ConfigOption: Table("config_option") {
+    object ConfigOptionTable: Table("config_option") {
         val id = integer("id").autoIncrement()
         val configId = integer("config_id")
         val order =  integer("order").nullable()
         val option = varchar("option", 45)
         val displayName = varchar("display_name", 45)
         val description = varchar("description", 45).nullable()
+
+        override val primaryKey = PrimaryKey(id)
+    }
+
+    object ConfigFileTable: Table("config_file") {
+        val id = integer("id").autoIncrement()
+        val gameId = integer("game_id")
+        val path = varchar("path", 45)
+        val filename = varchar("filename", 45)
+
+        override val primaryKey = PrimaryKey(id)
+    }
+
+    object ConfigCategoryTable: Table("config_category") {
+        val id = integer("id").autoIncrement()
+        val name = varchar("name", 45)
 
         override val primaryKey = PrimaryKey(id)
     }
