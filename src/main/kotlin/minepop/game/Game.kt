@@ -1,41 +1,73 @@
 package minepop.game
 
 import java.io.File
-import java.lang.Exception
 
 class Game(val name: String, val configFiles: MutableList<ConfigFile> = mutableListOf())
 
-abstract class ConfigFile(val path: String, val filename: String, val configs: MutableList<Config> = mutableListOf()) {
-    /**
-     * Parses a game-specific config file and returns a list of Config's
-     */
-    abstract fun parseConfigFile(file: File): MutableList<Config>
+class ConfigFile(val id: Int, val path: String, val filename: String, val configs: MutableList<Config> = mutableListOf()) {
 
-    /**
-     * Uses a list of ConfigFile's to generate a list of game-specific config files
-     */
-    abstract fun genConfigFile(): String
 }
 
-class Config(val name: String, var category: String = "General") {
-    var displayName: String = toDisplayName(name)
-    var configOptions = mutableListOf<ConfigOption>()
+class Config(val name: String, val displayName: String = toDisplayName(name)) {
+    var id: Int = -1
+    var description: String = ""
+    var displayType: Int? = null
+    constructor(_id: Int, _name: String, _displayName: String = toDisplayName(_name), _displayType: Int?, _description: String?): this(_name, _displayName) {
+        id = _id
+        displayType = _displayType
+        if (_description != null) {
+            description = _description
+        }
+    }
+
+    private var configOptions = mutableListOf<ConfigOption>()
+
+    fun forEachOption(action: (ConfigOption) -> Unit) {
+        configOptions.forEach(action)
+    }
 
     fun addConfigOption(configOption: ConfigOption) {
         configOptions.add(configOption)
     }
 
-    fun getDefaultOption(): ConfigOption {
+    fun getDefaultOption(): ConfigOption? {
         configOptions.forEach {
             if (it.isDefault) {
                 return it
             }
         }
-        TODO("Make own subclass of exception")
-        throw Exception("No default value set for $name config")
+        return null
     }
 }
 
-data class ConfigOption(val name: String, val order: Int, val isDefault: Boolean = false, val displayName: String = name.toLowerCase().capitalize())
+// TODO: Remove `isDefault`
+data class ConfigOption(val name: String, val order: Int, val isDefault: Boolean = false, val displayName: String = toDisplayName(name)) {
+    var id: Int = -1
+    var description: String = ""
+    constructor(_id: Int, _name: String, _order: Int, _displayName: String = toDisplayName(_name), _description: String?) : this(_name, _order) {
+        id = _id
+        if (_description != null) {
+            description = _description
+        }
+    }
+}
+
+data class Category(val id: Int, val name: String)
+
+abstract class ConfigFormatter() {
+    /**
+     * Parses a game-specific config file and returns a list of `Config`s
+     * @param file game-specific config file
+     * @return list of `Config`s
+     */
+    abstract fun parseConfigFile(file: File): MutableList<Config>
+
+    /**
+     * Uses a list of `Config`s to generate a game-specific config file
+     * @param configFile
+     * @return contents of game-specific config file
+     */
+    abstract fun genConfigFile(configFile: ConfigFile): String
+}
 
 fun toDisplayName(name: String) = name.toLowerCase().capitalize().replace("_"," ").replace("-"," ")

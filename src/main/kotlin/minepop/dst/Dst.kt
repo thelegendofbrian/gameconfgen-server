@@ -10,16 +10,9 @@ object Games {
     val dst = Game("Don't Starve Together")
 }
 
-fun main(args: Array<String>) {
-    val configOption = ConfigOption("Option 1", 0)
-    val config = Config("test_config")
-    val configFile = DstConfigFile("ur/path/boi/", "config.txt")
-    configFile.configs.add(config)
-    Games.dst.configFiles.add(configFile)
-}
-
-class DstConfigFile(path: String, filename: String, configs: MutableList<Config> = mutableListOf()): ConfigFile(path, filename, configs) {
+class DstFormatter(): ConfigFormatter() {
     override fun parseConfigFile(file: File): MutableList<Config> {
+        var configs: MutableList<Config> = mutableListOf()
         var dstConf = file.readLines()
         dstConf.forEach {
             val match = Regex(pattern).find(it)
@@ -34,13 +27,13 @@ class DstConfigFile(path: String, filename: String, configs: MutableList<Config>
                         config.addConfigOption(ConfigOption(option, order, option == configValue))
                     }
                 }
-            configs.add(config)
+                configs.add(config)
             }
         }
         return configs
     }
 
-    override fun genConfigFile(): String {
+    override fun genConfigFile(configFile: ConfigFile): String {
         TODO("Not yet implemented")
     }
 }

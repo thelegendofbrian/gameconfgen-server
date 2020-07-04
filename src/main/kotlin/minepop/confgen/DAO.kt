@@ -4,10 +4,10 @@ import com.natpryce.konfig.ConfigurationProperties
 import com.natpryce.konfig.Key
 import com.natpryce.konfig.intType
 import com.natpryce.konfig.stringType
-import minepop.dst.DstConfigFile
+import minepop.game.Category
 import minepop.game.Config
 import minepop.game.ConfigFile
-import minepop.game.Game
+import minepop.game.ConfigOption
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
@@ -29,6 +29,8 @@ class DAO {
 
     /**
      * Insert config object into database
+     * @param config `Config` object to add to database
+     * @return `ConfigTable` `id` value for inserted `Config` object
      */
     fun insertConfig(config: Config): Int {
         var lastConfigId: Int = -1
@@ -43,38 +45,86 @@ class DAO {
     }
 
     /**
-     * Generate a Game object for a specified game from the database
+     * Retrieve a list of config files from the database
+     * @param gameId
+     * @return list of `ConfigFile`s
      */
-    fun buildConfigs(gameId2: Int): Game {
-        val configs = mutableListOf<Config>()
+    fun retrieveConfigFiles(gameId: Int): MutableList<ConfigFile> {
+        val configFiles = mutableListOf<ConfigFile>()
         transaction {
-            (ConfigFileTable innerJoin ConfigTable innerJoin ConfigCategoryTable).slice(ConfigTable.categoryId, ConfigCategoryTable.name).select {
-                ConfigFileTable.gameId.eq(gameId2)
-            }.groupBy(ConfigTable.categoryId, ConfigCategoryTable.name).forEach { category ->
-                var configFile = DstConfigFile(category[ConfigFileTable.path], category[ConfigFileTable.filename])
-                configs += Config("name")
+            ConfigFileTable.slice(ConfigFileTable.id, ConfigFileTable.path, ConfigFileTable.filename).select {
+                ConfigFileTable.gameId.eq(gameId)
+            }.forEach { file ->
+                configFiles += ConfigFile(file[ConfigFileTable.id], file[ConfigFileTable.path], file[ConfigFileTable.filename])
             }
         }
-        return TODO()
+        return configFiles
     }
 
-    fun selectConfigs(categoryId: Int) {
-
+    /**
+     * Retrieve a list of categories from the database
+     * @param configFileId
+     * @return list of categories
+     */
+    fun retrieveCategories(configFileId: Int): MutableList<Category> {
+        val cats = mutableListOf<Category>()
+        transaction {
+            (ConfigTable innerJoin ConfigCategoryTable).slice(ConfigCategoryTable.id, ConfigTable.categoryId, ConfigCategoryTable.name).select {
+                ConfigTable.configFileId.eq(configFileId)
+            }.groupBy(ConfigTable.categoryId, ConfigCategoryTable.name).forEach { category ->
+                cats += Category(category[ConfigCategoryTable.id], category[ConfigCategoryTable.name])
+            }
+        }
+        return cats
     }
 
-    fun insertConfigOption(configId2: Int, name2: String, displayName2: String, order2: Int, isDefault2: Boolean) {
+    /**
+     * Retrieve a list of configs from the database
+     * @param categoryId
+     * @return list of `Config`s
+     */
+    fun retrieveConfigs(categoryId: Int): MutableList<Config> {
+        val configs = mutableListOf<Config>()
+        transaction {
+            ConfigTable.slice(ConfigTable.id, ConfigTable.name, ConfigTable.displayName, ConfigTable.description, ConfigTable.displayType).select {
+                ConfigTable.categoryId.eq(categoryId)
+            }.forEach { config ->
+                configs += Config(config[ConfigTable.id], config[ConfigTable.name], config[ConfigTable.displayName], config[ConfigTable.displayType], config[ConfigTable.description])
+            }
+        }
+        return configs
+    }
+
+    /**
+     * Retrieve a list of config options from the database
+     * @param configId
+     * @return list of `ConfigOption`s
+     */
+    fun retrieveConfigOptions(configId: Int): MutableList<ConfigOption> {
+        val configOptions = mutableListOf<ConfigOption>()
+        transaction {
+            ConfigOptionTable.slice(ConfigOptionTable.id, ConfigOptionTable.option, ConfigOptionTable.order, ConfigOptionTable.displayName, ConfigOptionTable.description).select {
+                ConfigOptionTable.configId.eq(configId)
+            }.orderBy(ConfigOptionTable.order).forEach { option ->
+                configOptions += ConfigOption(option[ConfigOptionTable.id], option[ConfigOptionTable.option], option[ConfigOptionTable.order], option[ConfigOptionTable.displayName], option[ConfigOptionTable.description])
+            }
+        }
+        return configOptions
+    }
+
+    fun insertConfigOption(configId: Int, name: String, displayName: String, order: Int, isDefault2: Boolean) {
         var lastConfigOptionId: Int = -1
 
         transaction {
             lastConfigOptionId = ConfigOptionTable.insert {
-                it[option] = name2
-                it[displayName] = displayName2
-                it[order] = order2
-                it[configId] = configId2
+                it[ConfigOptionTable.option] = name
+                it[ConfigOptionTable.displayName] = displayName
+                it[ConfigOptionTable.order] = order
+                it[ConfigOptionTable.configId] = configId
             }[ConfigOptionTable.id]
 
             if (isDefault2) {
-                ConfigTable.update({ ConfigTable.id eq configId2}) {
+                ConfigTable.update({ ConfigTable.id eq configId}) {
                     it[defaultConfigOptionId] = lastConfigOptionId
                 }
             }
@@ -88,6 +138,7 @@ class DAO {
         val defaultConfigOptionId = integer("default_config_option_id").nullable()
         val displayName = varchar("display_name", 45)
         val description = varchar("description", 45).nullable()
+        val displayType = integer("display_type").nullable()
         val categoryId = (integer("category_id") references ConfigCategoryTable.id).nullable()
 
         override val primaryKey = PrimaryKey(id)
@@ -96,7 +147,7 @@ class DAO {
     object ConfigOptionTable: Table("config_option") {
         val id = integer("id").autoIncrement()
         val configId = integer("config_id")
-        val order =  integer("order").nullable()
+        val order =  integer("order")
         val option = varchar("option", 45)
         val displayName = varchar("display_name", 45)
         val description = varchar("description", 45).nullable()

@@ -1,247 +1,3127 @@
- 
 [
-  {
-    "category":"General",
-    "contents":
-    [
-      {
-        "configName":"Preset",
-        "configDesc":"Rawr I'm a description",
-        "configId":"preset",
-        "displayType":1,
-        "defaultOption":0,
-        "options":[
-          {
-            "name":"Survival together",
-            "desc":"The first starting location",
-            "id":"SURVIVAL_TOGETHER"
-          },
-          {
-            "name":"Mod missing",
-            "desc":"The second starting location",
-            "id":"MOD_MISSING"
-          },
-          {
-            "name":"Survival together classic",
-            "desc":"The third starting location",
-            "id":"SURVIVAL_TOGETHER_CLASSIC"
-          },
-          {
-            "name":"Survival default plus",
-            "desc":"The third starting location",
-            "id":"SURVIVAL_DEFAULT_PLUS"
-          },
-          {
-            "name":"Complete darkness",
-            "desc":"The third starting location",
-            "id":"COMPLETE_DARKNESS"
-          },
-          {
-            "name":"Cave",
-            "desc":"The third starting location",
-            "id":"DST_CAVE"
-          },
-          {
-            "name":"Cave plus",
-            "desc":"The third starting location",
-            "id":"DST_CAVE_PLUS"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category":"Misc",
-    "contents":
-    [
-      {
-        "configName":"Task set",
-        "configDesc":"Rawr I'm a description",
-        "configId":"task_set",
-        "displayType":1,
-        "defaultOption":1,
-        "options":[
-          {
-            "name":"Classic",
-            "desc":"The first starting location",
-            "id":"classic"
-          },
-          {
-            "name":"Default",
-            "desc":"The second starting location",
-            "id":"default"
-          },
-          {
-            "name":"Cave default",
-            "desc":"The third starting location",
-            "id":"cave_default"
-          }
-        ]
-      },
-      {
-        "configName":"Starting location",
-        "configDesc":"Rawr I'm a description",
-        "configId":"start_location",
-        "displayType":1,
-        "defaultOption":1,
-        "options":[
-          {
-            "name":"Caves",
-            "desc":"The first starting location",
-            "id":"caves"
-          },
-          {
-            "name":"Default",
-            "desc":"The second starting location",
-            "id":"default"
-          },
-          {
-            "name":"Plus",
-            "desc":"The third starting location",
-            "id":"plus"
-          },
-          {
-            "name":"Darkness",
-            "desc":"The third starting location",
-            "id":"darkness"
-          }
-        ]
-      },
-      {
-        "configName":"World size",
-        "configDesc":"Rawr I'm a description Rawr I'm a description Rawr I'm a description Rawr I'm a description Rawr I'm a description Rawr I'm a description Rawr I'm a description Rawr I'm a description",
-        "configId":"world_size",
-        "displayType":0,
-        "defaultOption":2,
-        "options":[
-          {
-            "name":"Small",
-            "desc":"The first starting location",
-            "id":"small"
-          },
-          {
-            "name":"Medium",
-            "desc":"The second starting location",
-            "id":"medium"
-          },
-          {
-            "name":"Default",
-            "desc":"The third starting location",
-            "id":"default"
-          },
-          {
-            "name":"Huge",
-            "desc":"The third starting location",
-            "id":"huge"
-          }
-        ]
-      },
-      {
-        "configName":"Branching",
-        "configDesc":"Rawr I'm a description",
-        "configId":"branching",
-        "displayType":0,
-        "defaultOption":2,
-        "options":[
-          {
-            "name":"Never",
-            "desc":"The first starting location",
-            "id":"never"
-          },
-          {
-            "name":"Least",
-            "desc":"The second starting location",
-            "id":"least"
-          },
-          {
-            "name":"Default",
-            "desc":"The third starting location",
-            "id":"default"
-          },
-          {
-            "name":"Most",
-            "desc":"The third starting location",
-            "id":"most"
-          }
-        ]
-      },
-      {
-        "configName":"Branching2",
-        "configDesc":"Rawr I'm a description",
-        "configId":"braunch",
-        "displayType":2,
-        "defaultOption":"Default text",
-        "options":[
-          {
-            "name":"Never",
-            "desc":"The first starting location",
-            "id":"asdf"
-          },
-          {
-            "name":"Least",
-            "desc":"The second starting location",
-            "id":"fdasf"
-          },
-          {
-            "name":"Default",
-            "desc":"The third starting location",
-            "id":"123"
-          },
-          {
-            "name":"Most",
-            "desc":"The third starting location",
-            "id":"asdf"
-          }
-        ]
-      },
-      {
-        "configName":"A boolean",
-        "configDesc":"Rawr I'm a description",
-        "configId":"booly",
-        "displayType":3,
-        "defaultOption":1,
-        "options":[
-          {
-            "name":"False",
-            "desc":"The first starting location",
-            "id":false
-          },
-          {
-            "name":"True",
-            "desc":"The second starting location",
-            "id":true
-          }
-        ]
-      },
-      {
-        "configName":"Branching4",
-        "configDesc":"Rawr I'm a description",
-        "configId":"branching4",
-        "displayType":4,
-        "defaultOption":2,
-        "options":[
-          {
-            "name":"Never",
-            "desc":"The first starting location",
-            "id":"12311"
-          },
-          {
-            "name":"Least",
-            "desc":"The second starting location",
-            "id":"dfsds"
-          },
-          {
-            "name":"Default",
-            "desc":"The third starting location",
-            "id":"hfdgd"
-          },
-          {
-            "name":"Most",
-            "desc":"The third starting location",
-            "id":"xcvx"
-          }
-        ]
-      }
-    ]
-  }
+{
+"contents": [
+{
+"options": [
+{
+"id": "caves",
+"name": "Caves",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "plus",
+"name": "Plus",
+"description": ""
+},
+{
+"id": "darkness",
+"name": "Darkness",
+"description": ""
+}
+],
+"configName": "Start location",
+"configDesc": "",
+"configId": "start_location",
+"displayType": 1,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "small",
+"name": "Small",
+"description": ""
+},
+{
+"id": "medium",
+"name": "Medium",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "huge",
+"name": "Huge",
+"description": ""
+}
+],
+"configName": "World size",
+"configDesc": "",
+"configId": "world_size",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "least",
+"name": "Least",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "most",
+"name": "Most",
+"description": ""
+}
+],
+"configName": "Branching",
+"configDesc": "",
+"configId": "branching",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Loop",
+"configDesc": "",
+"configId": "loop",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "none",
+"name": "None",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "hallowed_nights",
+"name": "Hallowed nights",
+"description": ""
+},
+{
+"id": "winters_feast",
+"name": "Winters feast",
+"description": ""
+},
+{
+"id": "year_of_the_gobbler",
+"name": "Year of the gobbler",
+"description": ""
+}
+],
+"configName": "Special event",
+"configDesc": "",
+"configId": "specialevent",
+"displayType": 1,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "noseason",
+"name": "Noseason",
+"description": ""
+},
+{
+"id": "veryshortseason",
+"name": "Veryshortseason",
+"description": ""
+},
+{
+"id": "shortseason",
+"name": "Shortseason",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "longseason",
+"name": "Longseason",
+"description": ""
+},
+{
+"id": "verylongseason",
+"name": "Verylongseason",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+}
+],
+"configName": "Autumn",
+"configDesc": "",
+"configId": "autumn",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "noseason",
+"name": "Noseason",
+"description": ""
+},
+{
+"id": "veryshortseason",
+"name": "Veryshortseason",
+"description": ""
+},
+{
+"id": "shortseason",
+"name": "Shortseason",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "longseason",
+"name": "Longseason",
+"description": ""
+},
+{
+"id": "verylongseason",
+"name": "Verylongseason",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+}
+],
+"configName": "Winter",
+"configDesc": "",
+"configId": "winter",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "noseason",
+"name": "Noseason",
+"description": ""
+},
+{
+"id": "veryshortseason",
+"name": "Veryshortseason",
+"description": ""
+},
+{
+"id": "shortseason",
+"name": "Shortseason",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "longseason",
+"name": "Longseason",
+"description": ""
+},
+{
+"id": "verylongseason",
+"name": "Verylongseason",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+}
+],
+"configName": "Spring",
+"configDesc": "",
+"configId": "spring",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "noseason",
+"name": "Noseason",
+"description": ""
+},
+{
+"id": "veryshortseason",
+"name": "Veryshortseason",
+"description": ""
+},
+{
+"id": "shortseason",
+"name": "Shortseason",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "longseason",
+"name": "Longseason",
+"description": ""
+},
+{
+"id": "verylongseason",
+"name": "Verylongseason",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+}
+],
+"configName": "Summer",
+"configDesc": "",
+"configId": "summer",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "winter",
+"name": "Winter",
+"description": ""
+},
+{
+"id": "spring",
+"name": "Spring",
+"description": ""
+},
+{
+"id": "summer",
+"name": "Summer",
+"description": ""
+},
+{
+"id": "autumnorspring",
+"name": "Autumnorspring",
+"description": ""
+},
+{
+"id": "winterorsummer",
+"name": "Winterorsummer",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+}
+],
+"configName": "Season start",
+"configDesc": "",
+"configId": "season_start",
+"displayType": 1,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "longday",
+"name": "Longday",
+"description": ""
+},
+{
+"id": "longdusk",
+"name": "Longdusk",
+"description": ""
+},
+{
+"id": "longnight",
+"name": "Longnight",
+"description": ""
+},
+{
+"id": "noday",
+"name": "Noday",
+"description": ""
+},
+{
+"id": "nodusk",
+"name": "Nodusk",
+"description": ""
+},
+{
+"id": "nonight",
+"name": "Nonight",
+"description": ""
+},
+{
+"id": "onlyday",
+"name": "Onlyday",
+"description": ""
+},
+{
+"id": "onlydusk",
+"name": "Onlydusk",
+"description": ""
+},
+{
+"id": "onlynight",
+"name": "Onlynight",
+"description": ""
+}
+],
+"configName": "Day",
+"configDesc": "",
+"configId": "day",
+"displayType": 1,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Weather",
+"configDesc": "",
+"configId": "weather",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Earthquakes",
+"configDesc": "",
+"configId": "earthquakes",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Lightning",
+"configDesc": "",
+"configId": "lightning",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Frograin",
+"configDesc": "",
+"configId": "frograin",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Wildfires",
+"configDesc": "",
+"configId": "wildfires",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "veryslow",
+"name": "Veryslow",
+"description": ""
+},
+{
+"id": "slow",
+"name": "Slow",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "fast",
+"name": "Fast",
+"description": ""
+},
+{
+"id": "veryfast",
+"name": "Veryfast",
+"description": ""
+}
+],
+"configName": "Regrowth",
+"configDesc": "",
+"configId": "regrowth",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Touchstone",
+"configDesc": "",
+"configId": "touchstone",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Boons",
+"configDesc": "",
+"configId": "boons",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "veryslow",
+"name": "Veryslow",
+"description": ""
+},
+{
+"id": "slow",
+"name": "Slow",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "fast",
+"name": "Fast",
+"description": ""
+},
+{
+"id": "veryfast",
+"name": "Veryfast",
+"description": ""
+}
+],
+"configName": "Cavelight",
+"configDesc": "",
+"configId": "cavelight",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "none",
+"name": "None",
+"description": ""
+},
+{
+"id": "random",
+"name": "Random",
+"description": ""
+},
+{
+"id": "long",
+"name": "Long",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "short",
+"name": "Short",
+"description": ""
+}
+],
+"configName": "Disease delay",
+"configDesc": "",
+"configId": "disease_delay",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "classic",
+"name": "Classic",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "highly random",
+"name": "Highly random",
+"description": ""
+}
+],
+"configName": "Prefabswaps start",
+"configDesc": "",
+"configId": "prefabswaps_start",
+"displayType": 1,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "none",
+"name": "None",
+"description": ""
+},
+{
+"id": "few",
+"name": "Few",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "many",
+"name": "Many",
+"description": ""
+},
+{
+"id": "max",
+"name": "Max",
+"description": ""
+}
+],
+"configName": "Petrification",
+"configDesc": "",
+"configId": "petrification",
+"displayType": 0,
+"defaultOption": 1
+}
+],
+"category": "Misc"
+},
+{
+"contents": [
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Flowers",
+"configDesc": "",
+"configId": "flowers",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Grass",
+"configDesc": "",
+"configId": "grass",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Sapling",
+"configDesc": "",
+"configId": "sapling",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Marshbush",
+"configDesc": "",
+"configId": "marshbush",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Tumbleweed",
+"configDesc": "",
+"configId": "tumbleweed",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Reeds",
+"configDesc": "",
+"configId": "reeds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Trees",
+"configDesc": "",
+"configId": "trees",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Flint",
+"configDesc": "",
+"configId": "flint",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Rock",
+"configDesc": "",
+"configId": "rock",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Rock ice",
+"configDesc": "",
+"configId": "rock_ice",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Meteorspawner",
+"configDesc": "",
+"configId": "meteorspawner",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Meteorshowers",
+"configDesc": "",
+"configId": "meteorshowers",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Mushtree",
+"configDesc": "",
+"configId": "mushtree",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Fern",
+"configDesc": "",
+"configId": "fern",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Flower cave",
+"configDesc": "",
+"configId": "flower_cave",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Wormlights",
+"configDesc": "",
+"configId": "wormlights",
+"displayType": 0,
+"defaultOption": 1
+}
+],
+"category": "Resources"
+},
+{
+"contents": [
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Berrybush",
+"configDesc": "",
+"configId": "berrybush",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Carrot",
+"configDesc": "",
+"configId": "carrot",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Mushroom",
+"configDesc": "",
+"configId": "mushroom",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Cactus",
+"configDesc": "",
+"configId": "cactus",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Banana",
+"configDesc": "",
+"configId": "banana",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Lichen",
+"configDesc": "",
+"configId": "lichen",
+"displayType": 0,
+"defaultOption": 1
+}
+],
+"category": "Unprepared"
+},
+{
+"contents": [
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Rabbits",
+"configDesc": "",
+"configId": "rabbits",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Moles",
+"configDesc": "",
+"configId": "moles",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Butterfly",
+"configDesc": "",
+"configId": "butterfly",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Birds",
+"configDesc": "",
+"configId": "birds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Buzzard",
+"configDesc": "",
+"configId": "buzzard",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Catcoon",
+"configDesc": "",
+"configId": "catcoon",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Perd",
+"configDesc": "",
+"configId": "perd",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Pigs",
+"configDesc": "",
+"configId": "pigs",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Lightninggoat",
+"configDesc": "",
+"configId": "lightninggoat",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Beefalo",
+"configDesc": "",
+"configId": "beefalo",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Beefaloheat",
+"configDesc": "",
+"configId": "beefaloheat",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Hunt",
+"configDesc": "",
+"configId": "hunt",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Alternatehunt",
+"configDesc": "",
+"configId": "alternatehunt",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Penguins",
+"configDesc": "",
+"configId": "penguins",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Cave ponds",
+"configDesc": "",
+"configId": "cave_ponds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Ponds",
+"configDesc": "",
+"configId": "ponds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Bees",
+"configDesc": "",
+"configId": "bees",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Angrybees",
+"configDesc": "",
+"configId": "angrybees",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Tallbirds",
+"configDesc": "",
+"configId": "tallbirds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Slurper",
+"configDesc": "",
+"configId": "slurper",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Bunnymen",
+"configDesc": "",
+"configId": "bunnymen",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Slurtles",
+"configDesc": "",
+"configId": "slurtles",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Rocky",
+"configDesc": "",
+"configId": "rocky",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Monkey",
+"configDesc": "",
+"configId": "monkey",
+"displayType": 0,
+"defaultOption": 1
+}
+],
+"category": "Animals"
+},
+{
+"contents": [
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Spiders",
+"configDesc": "",
+"configId": "spiders",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Cave spiders",
+"configDesc": "",
+"configId": "cave_spiders",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Hounds",
+"configDesc": "",
+"configId": "hounds",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Houndmound",
+"configDesc": "",
+"configId": "houndmound",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Merm",
+"configDesc": "",
+"configId": "merm",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Tentacles",
+"configDesc": "",
+"configId": "tentacles",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Chess",
+"configDesc": "",
+"configId": "chess",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Lureplants",
+"configDesc": "",
+"configId": "lureplants",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Walrus",
+"configDesc": "",
+"configId": "walrus",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Liefs",
+"configDesc": "",
+"configId": "liefs",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Deciduousmonster",
+"configDesc": "",
+"configId": "deciduousmonster",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Krampus",
+"configDesc": "",
+"configId": "krampus",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Bearger",
+"configDesc": "",
+"configId": "bearger",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Deerclops",
+"configDesc": "",
+"configId": "deerclops",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Goosemoose",
+"configDesc": "",
+"configId": "goosemoose",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Dragonfly",
+"configDesc": "",
+"configId": "dragonfly",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Antliontribute",
+"configDesc": "",
+"configId": "antliontribute",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Bats",
+"configDesc": "",
+"configId": "bats",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Fissure",
+"configDesc": "",
+"configId": "fissure",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Wormattacks",
+"configDesc": "",
+"configId": "wormattacks",
+"displayType": 0,
+"defaultOption": 1
+},
+{
+"options": [
+{
+"id": "never",
+"name": "Never",
+"description": ""
+},
+{
+"id": "rare",
+"name": "Rare",
+"description": ""
+},
+{
+"id": "default",
+"name": "Default",
+"description": ""
+},
+{
+"id": "often",
+"name": "Often",
+"description": ""
+},
+{
+"id": "always",
+"name": "Always",
+"description": ""
+}
+],
+"configName": "Worms",
+"configDesc": "",
+"configId": "worms",
+"displayType": 0,
+"defaultOption": 1
+}
+],
+"category": "Monsters"
+}
 ]
